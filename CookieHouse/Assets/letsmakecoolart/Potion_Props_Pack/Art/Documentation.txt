@@ -1,0 +1,106 @@
+- Universal Rendering Pipeline
+
+- 150 game-ready Potion Props assets [*fbx / 10 texture atlases (*tga)]
+
+- UVs: channel 1: overlapping; channel 2: non-overlapping (for baking lightmaps)
+
+- LODs
+
+- Collision
+
+----------------
+
+Potion Props:
+
+Artefacts:
+
+- Frog [1 type]
+- Fruit [1 type]
+- Mask [1 type]
+- Skull [1 type]
+- Bird skull [1 type]
+- Snake [1 type]
+- MagicBall [1 type]
+
+Loot:
+
+- Coins [1 type - 4 variations]
+- Bone [1 type]
+- Horn [1 type - 2 variations]
+- Crystals [2 type - 3 variations]
+- Gems [1 type - 8 variations]
+- Mushrooms [2 type - 6 variations]
+- Root [1 type]
+- Pile Spice [1 type]
+
+Bottles:
+
+- Tiny [3 type - 6 variations]
+- Small [5 type - 6 variations]
+- Medium [6 type - 8 variations]
+- Big [6 type - 11 variations]
+- Huge [3 type - 5 variations]
+
+Tableware:
+
+- Bowls [3 type]
+- Plates [1 type - 2 variations]
+- Mortar and Pestel [1 type - 3 variations]
+- Casket [1 type]
+- Scoop [1 type]
+- Spoon [1 type]
+- Dagger [1 type]
+- Jugs [2 type]
+- Kettle [1 type]
+- Hourglass [1 type]
+- Libra [1 type]
+- Bottle's Stands [6 type]
+- Bags [3 type - 4 variations]
+- Terrarium [2 type - 4 variations]
+
+Pots:
+
+- Pots [3 type - 10 variations]
+- Caps [2 type]
+- Chains [3 type - 6 variations]
+- Firepit [1 type]
+- Hooks [2 type - 3 variations]
+
+Herbs:
+
+- Flower Pots [3 type - 5 variations]
+- Herbs brooms [6 type - 12 variations]
+- Table Herbs [2 type - 3 variations]
+- Stick [1 type]
+
+Combine and mix it to get different meshes.
+
+----------------
+
+Number of Meshes: 150
+Number of Unique Meshes: 88
+Average polygon count: 3000 tris
+
+Collision: Yes
+LODs: (Yes/ LOD0 - LOD1 - LOD2 - LOD3)
+
+Texture Resolutions:
+
+Atlases [2048x2048 *tga]
+- Artefacts
+- Loot
+- Pots
+- Bags_Caps
+- FirePit
+- Herbs
+- Kitchen_Tools
+- Liquids
+- Metal_Parts
+- Tableware
+
+(AO/BaseColorOpacity/MetallicSmoothness/Normal) 
+
+----------------
+
+Thank you for purchasing this pack!
+If you have any questions please write me on e-mail - letsmakecoolart@gmail.com
