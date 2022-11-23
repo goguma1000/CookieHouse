@@ -38,7 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00015404876, g: 0.00003991346, b: 0.0000012270182,
+    a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1126,8 +1127,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 175847304036056482, guid: 64f5c760b9a55b04fabf29998678fb3a,
-    type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -1818,8 +1818,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 12837396378182107, guid: b22d74836c48067449de21a48546cc12,
-    type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -2198,8 +2197,8 @@ MonoBehaviour:
   m_Camera: {fileID: 500882997}
   m_OriginBaseGameObject: {fileID: 1673276448}
   m_CameraFloorOffsetObject: {fileID: 1398325522}
-  m_RequestedTrackingOriginMode: 2
-  m_CameraYOffset: 1.1176
+  m_RequestedTrackingOriginMode: 1
+  m_CameraYOffset: 0
 --- !u!4 &1673276450
 Transform:
   m_ObjectHideFlags: 0
@@ -2318,8 +2317,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972242870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0017542687, y: 0.0017542687, z: 0.0017542687}
+  m_LocalPosition: {x: 0, y: 0, z: 0.737}
+  m_LocalScale: {x: 0.0027931465, y: 0.0027931465, z: 0.0027931465}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 360674522}
@@ -2330,7 +2329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.077}
   m_SizeDelta: {x: 541, y: 689}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2017789885
