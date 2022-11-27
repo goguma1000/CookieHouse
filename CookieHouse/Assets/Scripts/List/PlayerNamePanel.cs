@@ -6,6 +6,8 @@ using TMPro;
 public class PlayerNamePanel : MonoBehaviour
 {
     [SerializeField] private TMP_InputField inputBox;
+    [SerializeField] private GameObject playerlistPanel;
+    [SerializeField] private GameObject[] buttons;
     NetworkManager manager;
     private void Awake()
     {
@@ -21,6 +23,14 @@ public class PlayerNamePanel : MonoBehaviour
     {
         manager = NetworkManager.FindInstance();
         inputBox.text = "Player" + manager.GetPlayer().gameObject.GetInstanceID();
+        OnChangedName();
+        this.transform.parent.gameObject.SetActive(false);
+        playerlistPanel.SetActive(true);
+        for(int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(true);
+           
+        }
     }
     public void OnChangedName( )
     {

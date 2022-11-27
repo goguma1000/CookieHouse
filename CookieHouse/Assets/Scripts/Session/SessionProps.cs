@@ -6,7 +6,7 @@ using Fusion;
 using System.Reflection;
 using System;
 
-public class SessionProps : MonoBehaviour
+public class SessionProps
 {
     public string RoomName = "AutoHouse";
     public int PlayerLimit = 2;

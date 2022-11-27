@@ -32,15 +32,17 @@ public class LobbyManager : NetworkBehaviour
         player = manager.GetPlayer();
         if (manager.ConnectionStatus == ConnectionStatus.Started)
         {
-            int count = Runner.ActivePlayers.Count();
-            if (prePlayerCount != count && player != null&& player.playerName != "")
+            if (Runner != null)
             {
-                UpdateList(count);
-                Debug.Log(count);
-            }
-            if (prePlayerCount == count)
-            {
-                CheckReady(count);
+                int count = Runner.ActivePlayers.Count();
+                if (prePlayerCount != count && player != null && player.playerName != "")
+                {
+                    UpdateList(count);
+                }
+                if (prePlayerCount == count)
+                {
+                    CheckReady(count);
+                }
             }
         }
     }
