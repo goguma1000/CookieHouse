@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 using TMPro;
+using System.Threading.Tasks;
+
 public class NetworkButton : NetworkBehaviour
 {
-    [Networked(OnChanged = nameof(OnSelected))]
-    public bool isSelected { get; set; }
-
     [Networked]
     public string playerName { get; set; }
 
@@ -26,6 +25,7 @@ public class NetworkButton : NetworkBehaviour
     {
         changed.LoadNew();
         changed.Behaviour.setString(changed.Behaviour.playerName);
+        Debug.Log("update");
     }
 
     public async void OnClickButton(int btnNum)
@@ -47,11 +47,27 @@ public class NetworkButton : NetworkBehaviour
             }
             else if (Owner == player.GetInstanceID())
             {
-                playerName = "blank";
+                playerName = "";
                 Owner = 0;
                 player.RPC_SetCharacterSelected(0);
                 player.RPC_SetIsReady(false);
             }
+        }
+    }
+    
+    public async void ResetButton(Player player)
+    {
+        isTakingAuthority = true;
+        bool auth = await Object.WaitForStateAuthority();
+        isTakingAuthority = false;
+        if (true)
+        {
+            if (Owner != player.GetInstanceID())
+            {           
+                playerName = "";
+                Owner = 0;
+            }
+            Debug.Log($"Owner:{Owner}  playerName:{playerName}");
         }
     }
 }

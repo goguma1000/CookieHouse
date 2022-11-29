@@ -22,7 +22,7 @@ public class PlayerNamePanel : MonoBehaviour
     private void setDefaultName()
     {
         manager = NetworkManager.FindInstance();
-        inputBox.text = "Player" + manager.GetPlayer().gameObject.GetInstanceID();
+        inputBox.text = "Player" + manager.GetPlayer().GetInstanceID();
         OnChangedName();
         this.transform.parent.gameObject.SetActive(false);
         playerlistPanel.SetActive(true);

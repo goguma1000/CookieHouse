@@ -11,7 +11,8 @@ using System.Linq;
 public class LobbyManager : NetworkBehaviour
 {
 
-    [SerializeField] private GameObject PlayerListItemPrefab;
+    [SerializeField] private TextMeshProUGUI[] PlayerListItems;
+    [SerializeField] private NetworkButton[] networkButtons;
     [SerializeField] private Transform itemParent;
     [SerializeField] private Button startButton;
     [SerializeField] private TextMeshProUGUI startText;
@@ -37,6 +38,13 @@ public class LobbyManager : NetworkBehaviour
                 int count = Runner.ActivePlayers.Count();
                 if (prePlayerCount != count && player != null && player.playerName != "")
                 {
+                    if(prePlayerCount > count)
+                    {
+                        for (int i = 0; i < networkButtons.Length; i++)
+                        {
+                            networkButtons[i].ResetButton(player);
+                        }
+                    }
                     UpdateList(count);
                 }
                 if (prePlayerCount == count)
@@ -48,17 +56,18 @@ public class LobbyManager : NetworkBehaviour
     }
 
     public void DisconnectRoom()
-    {
+    {   
         manager = NetworkManager.FindInstance();
         manager.Disconnect();
     }
     public void UpdateList(int nowPlayerCount)
     {
-        Recycle();
+        Refresh();
         if (manager.ForEachPlayer(nowPlayerCount, ply =>
           {
-              AddRow(ply);
+              UpdateName(ply, nowPlayerCount);
           })) prePlayerCount = nowPlayerCount;
+
     }
 
     private void CheckReady(int nowPlayerCount)
@@ -76,32 +85,27 @@ public class LobbyManager : NetworkBehaviour
             wait = "Waiting for session owner to start";
         startButton.enabled = wait == null;
         startText.text = wait ?? "Start";
+        if (wait == null) startText.fontSize = 20;
+        else startText.fontSize = 10;
     }
-    private void AddRow(Player ply)
+    private void UpdateName(Player ply, int nowPlayerCount)
     {
-        
-        GameObject go = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity, itemParent);
-        PlayerListItem item = go.GetComponent<PlayerListItem>();
-        item.SetUp(ply);
-
-        RectTransform rt = go.GetComponent<RectTransform>();
-        rt.localPosition = Vector3.zero;
-        rt.anchoredPosition = new Vector2(0, y);
-        y -= rt.rect.height;
-    }
-
-    private void Recycle()
-    {
-        if (itemParent != null)
+        for(int i =0; i < nowPlayerCount; i++)
         {
-            PlayerListItem[] items = itemParent.GetComponentsInChildren<PlayerListItem>();
-            foreach (PlayerListItem temp in items)
+            if (PlayerListItems[i].text != "") continue;
+            else
             {
-                temp.transform.SetParent(null);
-                Destroy(temp.gameObject);
+                PlayerListItems[i].text = ply.playerName;
+                break;
             }
         }
-        y = -32;
+    }
+    private void Refresh()
+    {
+        for (int i = 0; i < PlayerListItems.Length; i++)
+        {
+            PlayerListItems[i].text = "";
+        }
     }
 
     public void OnClickReady()
@@ -112,8 +116,9 @@ public class LobbyManager : NetworkBehaviour
     }
 
     public void OnStartGame()
-    {
+    {   
         manager = NetworkManager.FindInstance();
+        manager.loadingPanel.SetActive(true);
         SessionProps props = manager.Session.Props;
         manager.Session.LoadMap(MapIndex.GameMap);
     }

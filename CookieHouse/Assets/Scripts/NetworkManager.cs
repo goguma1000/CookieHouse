@@ -34,7 +34,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     
     [SerializeField] private Session sessionPrefab;
     [SerializeField] private Player playerPrefab;
-    [SerializeField] private GameObject loadingPanel;
+    public GameObject loadingPanel;
 
     private GameObject mainPanel;
     private NetworkRunner _runner;
@@ -223,8 +223,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
                 {
                     Debug.Log("Despawning Player");
                     playerObj.GetComponent<Player>().Despawn();
-
-
                 }
                 else { Debug.Log($"plyObj{playerObj}, auth: {playerObj.HasStateAuthority}"); }
             }

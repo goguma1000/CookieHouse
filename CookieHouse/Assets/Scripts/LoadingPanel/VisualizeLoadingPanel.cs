@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class VisualizeLoadingPanel : MonoBehaviour
 {
+    public GameObject doughnut;
+    [SerializeField]private float angle = 30;
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Run");      
+        doughnut.transform.Rotate(Vector3.forward,angle * Time.deltaTime);  
     }
 }
