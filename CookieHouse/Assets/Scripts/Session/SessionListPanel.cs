@@ -17,11 +17,11 @@ public class SessionListPanel : MonoBehaviour
 
     public async void Show()
     {
-        gameObject.SetActive(true);
-       // _error.text = "";
+        // _error.text = "";
         manager = NetworkManager.FindInstance();
         UpdateSessionList(new List<SessionInfo>());
-        await manager.EnterLobby($"CookieHouse", UpdateSessionList);
+        await manager.EnterLobby($"CookieHouse", UpdateSessionList); 
+        gameObject.SetActive(true);
     }
 
     public void Hide()
@@ -77,7 +77,6 @@ public class SessionListPanel : MonoBehaviour
         RectTransform rt = itemParent.GetComponent<RectTransform>();
         int count = itemParent.transform.childCount;
         float height = ((sessionListPrefab.GetComponent<RectTransform>().sizeDelta.y * count) + (space * (count - 1)));
-        Debug.Log($"Count: {count} Space: {space} height:{height}");
         rt.sizeDelta = new Vector2(rt.sizeDelta.x, height);
     }
 
@@ -85,5 +84,4 @@ public class SessionListPanel : MonoBehaviour
     {
         Show();
     }
-
 }

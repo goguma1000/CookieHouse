@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 6f9fa7184aa747d4395770f2ab635bbe
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 158
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb55492404b41fc419541ab07f07895e
+      internalID: -1988533692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_0
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 288
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28dfece20039f946b914e0b2919d84d
+      internalID: 2045803575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_2
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 288
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a18f6b8684c05c4680907d59f5a8e75
+      internalID: -714670484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_3
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 288
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c75aebd50a7cc4ca823accc5ded213
+      internalID: -108663351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_5
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 286
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794d9c3b14521b64e9176b311f20bf89
+      internalID: -301211075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_4
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 158
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6670c5542144b9a4c9c166314764dcee
+      internalID: -1996847324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_6
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 158
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122f8b20af6ce3d48b04b2a3ce52f2ed
+      internalID: 768460507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 158
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b897a7839a7e302479e12f77a94500d5
+      internalID: -916372929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16335105_Whole and bitten donuts flat vector illustration set_prev_ui_8
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 145
+        width: 5
+        height: 5
+      alignment: 9
+      pivot: {x: 0.57092285, y: 0.50000304}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b334392c238064188c42e36758030c
+      internalID: -1137784044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c16babc5fe8a22440997e00ec09fcc95
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_5: -301211075
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_24: -76028185
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_3: -108663351
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_11: -2024367700
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_17: 1044696697
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_19: -712379642
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_4: -1996847324
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_8: -1137784044
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_14: -233764273
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_18: 480036667
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_22: 273411095
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_12: -501859128
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_1: -1988533692
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_7: -916372929
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_6: 768460507
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_23: -2119753166
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_25: 1214930119
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_21: -1208799588
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_16: -1394922976
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_2: -714670484
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_26: 1562729848
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_0: 2045803575
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_13: -1515388435
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_10: 1178434932
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_9: 328039900
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_15: -827332779
+      16335105_Whole and bitten donuts flat vector illustration set_prev_ui_20: -1705714131
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
