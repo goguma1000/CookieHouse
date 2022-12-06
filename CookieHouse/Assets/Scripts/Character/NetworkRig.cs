@@ -27,6 +27,10 @@ public class NetworkRig : NetworkBehaviour
         if (isLocalNetworkRig)
         {
             hardwareRig = FindObjectOfType<HardwareRig>();
+            if(hardwareRig.transformBridge == null) 
+            { 
+                hardwareRig.transformBridge = this; 
+            }
             if (hardwareRig == null) Debug.LogError("Missing HardwareRig in the scene");
         }
     }

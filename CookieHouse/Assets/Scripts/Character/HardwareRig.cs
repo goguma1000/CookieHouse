@@ -5,6 +5,7 @@ using Fusion;
 using Fusion.Sockets;
 using System;
 
+
 public enum RigPart
 {
     None,
@@ -30,7 +31,7 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
     public HardwareHand leftHand;
     public HardwareHand rightHand;
     public HardwareHeadset headset;
-
+    public NetworkRig transformBridge;
     public NetworkRunner runner;
 
     private void Start()
@@ -43,9 +44,10 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
         }
         Debug.Log(runner);
         runner.AddCallbacks(this);
+       
     }
-
     public void OnInput(NetworkRunner runner, NetworkInput input) {
+  
         RigInput rigInput = new RigInput();
         rigInput.playerPosition = transform.position;
         rigInput.playerRotation = transform.rotation;
@@ -57,6 +59,7 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
         rigInput.headsetRotation = headset.transform.rotation;
         input.Set(rigInput);
     }
+
     #region Unused Callback
     public void OnConnectedToServer(NetworkRunner runner) { }
 
