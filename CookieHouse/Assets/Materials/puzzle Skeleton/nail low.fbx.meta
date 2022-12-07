@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:CookieHouse/Assets/Scenes/ground2.fbx.meta
+guid: 70028b48f8dcee242a186bc2ef0a44d5
+=======
 guid: ef2a2244b3b269a40af42c18a30c0819
+>>>>>>> bd6bf60e755d4cb2e46d3bd84c0f5b6160d63fac:CookieHouse/Assets/Materials/puzzle Skeleton/nail low.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

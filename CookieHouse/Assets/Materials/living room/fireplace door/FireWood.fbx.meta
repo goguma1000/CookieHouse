@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:CookieHouse/Assets/Scenes/ground.fbx.meta
+guid: 2086f0cf5958c214bb587b49b13f4ccd
+=======
 guid: ebabee3469d09b445ad15b46bd21af65
+>>>>>>> bd6bf60e755d4cb2e46d3bd84c0f5b6160d63fac:CookieHouse/Assets/Materials/living room/fireplace door/FireWood.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

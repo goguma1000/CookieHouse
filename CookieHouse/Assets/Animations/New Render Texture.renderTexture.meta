@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:CookieHouse/Assets/Animations/New Render Texture.renderTexture.meta
 guid: 0eba2eaa9e41e9b4bbe895989cbc9a93
 NativeFormatImporter:
+========
+guid: ab3c3ae80fa7527478d31789bf782c95
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> bd6bf60e755d4cb2e46d3bd84c0f5b6160d63fac:CookieHouse/Assets/Materials/living room/sofa.meta
   externalObjects: {}
   mainObjectFileID: 8400000
   userData: 
