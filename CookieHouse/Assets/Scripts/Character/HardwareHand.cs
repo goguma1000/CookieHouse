@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class HardwareHand : MonoBehaviour
+public class HardwareHand : NetworkBehaviour
 {
     public RigPart side;
     

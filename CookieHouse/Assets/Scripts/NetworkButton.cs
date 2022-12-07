@@ -14,7 +14,7 @@ public class NetworkButton : NetworkBehaviour
     public int Owner { get; set; }
 
     public TextMeshProUGUI text;
-    public bool isTakingAuthority = false;
+    private bool isTakingAuthority = false;
 
     public void setString(string name)
     {
