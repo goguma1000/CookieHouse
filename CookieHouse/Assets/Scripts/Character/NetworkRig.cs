@@ -11,7 +11,7 @@ public class NetworkRig : NetworkBehaviour
     public NetworkHand lefthand;
     public NetworkHand righthand;
     public NetworkHeadset headset;
-
+    public GameObject spawnPosition;
     public NetworkTransform networkTransform;
 
     private void Awake()
@@ -32,6 +32,8 @@ public class NetworkRig : NetworkBehaviour
                 hardwareRig.transformBridge = this; 
             }
             if (hardwareRig == null) Debug.LogError("Missing HardwareRig in the scene");
+            hardwareRig.gameObject.transform.position = spawnPosition.transform.position;
+            hardwareRig.gameObject.transform.rotation = spawnPosition.transform.rotation;
         }
     }
 

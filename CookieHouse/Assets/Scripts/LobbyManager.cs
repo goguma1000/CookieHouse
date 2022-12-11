@@ -16,7 +16,6 @@ public class LobbyManager : NetworkBehaviour
     [SerializeField] private Transform itemParent;
     [SerializeField] private Button startButton;
     [SerializeField] private TextMeshProUGUI startText;
-    private float y = -32;
     private int prePlayerCount = 0;
     private Player player;
     private int ready = 0;

@@ -49,6 +49,9 @@ MonoBehaviour:
   characterPrefabs:
   - {fileID: 6154195543362420284, guid: 7884c3640d8999d438d2c24d71735e7e, type: 3}
   - {fileID: -8271016770202359645, guid: 25a5a793d60246045b909272cd99c5e6, type: 3}
+  spawnPositions:
+  - {fileID: 3721993749593057319, guid: 23b45a187b8f7b24bb94b42438b9a5c4, type: 3}
+  - {fileID: 8686955458056494526, guid: 7338b236391ed94448206e0285ff2a64, type: 3}
   _selectedCharacterNum: 0
   _playerName: 
   _Ready:

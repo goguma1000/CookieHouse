@@ -15,14 +15,14 @@ EditorBuildSettings:
     path: Assets/Maps/2.Lobby.unity
     guid: b7defdb8f14270744830fe793ef2f05d
   - enabled: 1
+    path: Assets/Maps/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
     path: Assets/Maps/Main.unity
     guid: c42bb082bab8049478bc99f4888cb3a6
   - enabled: 1
     path: Assets/Maps/PuzzleTest.unity
     guid: 636dd95e7b5d0ec41a39080cabf9293b
-  - enabled: 1
-    path: Assets/Maps/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e86a305253e20cf4bb636ad94af7aed8,
       type: 2}
