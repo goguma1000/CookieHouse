@@ -259,6 +259,8 @@ MonoBehaviour:
   lefthand: {fileID: 5385577865150743020}
   righthand: {fileID: 5322462628912028720}
   headset: {fileID: 8260152112567467430}
+  spawnPosition: {fileID: 3721993749593057319, guid: 23b45a187b8f7b24bb94b42438b9a5c4,
+    type: 3}
   networkTransform: {fileID: 0}
 --- !u!1 &3635047692688461330
 GameObject:

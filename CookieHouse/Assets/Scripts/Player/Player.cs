@@ -26,7 +26,7 @@ public class Player : NetworkBehaviour
         if (HasStateAuthority && character == null && SceneManager.GetActiveScene().buildIndex == (int)MapIndex.GameMap)
         {
             Debug.Log($"Spawning avatar for player {name} with input auth {Object.InputAuthority}");
-            character = Runner.Spawn(characterPrefabs[selectedCharacterNum - 1], new Vector3(0,0,Mathf.Pow(-1,selectedCharacterNum)),Quaternion.Euler(new Vector3(0,180* (selectedCharacterNum - 1),0)), Object.InputAuthority, (runner, o) => {
+            character = Runner.Spawn(characterPrefabs[selectedCharacterNum - 1],Vector3.zero, Quaternion.identity, Object.InputAuthority, (runner, o) => {
                 Character temp = o.GetComponent<Character>();
                 Debug.Log($"Created Character for Player {playerName}");
                 temp.Player = this;

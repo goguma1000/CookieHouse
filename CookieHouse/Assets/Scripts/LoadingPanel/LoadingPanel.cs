@@ -24,7 +24,7 @@ public class LoadingPanel : NetworkSceneManagerBase
             {
                 case MapIndex.RoomList: path = "1.RoomList"; break;
                 case MapIndex.Lobby: path = "2.Lobby"; break;
-                default: path = "Main"; break;
+                default: path = "SampleScene"; break;
             }
             yield return SceneManager.LoadSceneAsync(path, LoadSceneMode.Single);
             var loadedScene = SceneManager.GetSceneByName(path);
