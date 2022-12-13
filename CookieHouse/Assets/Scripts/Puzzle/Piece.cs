@@ -6,10 +6,11 @@ using Fusion;
 public class Piece : NetworkBehaviour
 {
     [Networked(OnChanged = nameof(setMatch))]
-    private bool doMatch { get; set; }
+    public NetworkBool doMatch { get; set; }
 
     [SerializeField] private Transform targetPosition;
     [SerializeField] private float distOffset;
+    private bool isTakingAuthority = false;
     private static void setMatch(Changed<Piece> changed)
     {
         changed.LoadNew();
@@ -20,7 +21,6 @@ public class Piece : NetworkBehaviour
             changed.Behaviour.gameObject.transform.localRotation = Quaternion.identity;
             changed.Behaviour.gameObject.transform.localScale = new Vector3(1, 1, 1);
             changed.Behaviour.gameObject.transform.GetComponent<XrOffsetGrabInteractable>().enabled = false;
-            changed.Behaviour.doMatch = false;
         }
     }
     public async void CheckRightPosition()
@@ -28,14 +28,18 @@ public class Piece : NetworkBehaviour
         float distance = Vector3.Distance(targetPosition.position, this.transform.position);
         if (distance < distOffset)
         {
+            isTakingAuthority = true;
             bool auth = await Object.WaitForStateAuthority();
-            transform.SetParent(null);
-            doMatch = true;
+            isTakingAuthority = false;
+            if (auth)
+            {
+                transform.SetParent(null);
+                doMatch = true;
+            }
         }
         else if (distOffset < distance && distance < 3 * distOffset)
         {
-            bool auth = await Object.WaitForStateAuthority();
-            this.transform.position += new Vector3(0.2f, 0, 0);
+            this.gameObject.transform.position += new Vector3(-0.2f, 0, 0);
         }
     }
 }

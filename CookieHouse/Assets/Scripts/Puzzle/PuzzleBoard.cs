@@ -6,12 +6,31 @@ using Fusion;
 public class PuzzleBoard : NetworkBehaviour
 {
     [SerializeField] GameObject[] Masks;
+    [SerializeField] GameObject[] eventItems;
+    public bool isMuffin = false;
+    public bool isCandy = false;
+    public bool isSkeleton = false;
+    private bool isEventOn = false;
     void Update()
     {
         for (int i = 0; i < Masks.Length; i++)
         {
             if (Masks[i].transform.childCount == 0) return;
         }
-        Debug.Log("solved Puzzle");
+        isEventOn = true;
+        if (isEventOn)
+        {
+            isEventOn = false;
+            if (isMuffin)
+            {
+                eventItems[0].gameObject.SetActive(false);
+                eventItems[1].gameObject.SetActive(true);
+            }
+            else if (isCandy || isSkeleton)
+            {
+                eventItems[0].SetActive(true);
+            }
+        }
+        
     }
 }
