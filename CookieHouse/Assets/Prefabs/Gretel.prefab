@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 1015704005421334540}
   - component: {fileID: 8695799390049792968}
   - component: {fileID: 2616880689423366920}
+  - component: {fileID: 5994733422070376250}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -140,6 +141,26 @@ MonoBehaviour:
   _interpolationDataSource: 0
   networkTransform: {fileID: 0}
   side: 2
+--- !u!95 &5994733422070376250
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859864739338762816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e08fee6be55f254ea6c5d4132024ea2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2239377797632356231
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +839,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c6f313bf33260f4e94dcf5febff740e, type: 3}
+--- !u!1 &8097821444690901047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c6f313bf33260f4e94dcf5febff740e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8980270440305542502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5239775079758911520
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097821444690901047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e08fee6be55f254ea6c5d4132024ea2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &8875166736105022093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c6f313bf33260f4e94dcf5febff740e,

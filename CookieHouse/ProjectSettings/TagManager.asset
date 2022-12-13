@@ -9,6 +9,7 @@ TagManager:
   - Hat
   - House
   - Bird
+  - Key
   layers:
   - Default
   - TransparentFX

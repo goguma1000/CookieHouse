@@ -19,7 +19,8 @@ public class BookShelf : MonoBehaviour
         if (isEventOn)
         {
             isEventOn = false;
-            Debug.Log("solve puzzle");
+            eventItems[0].SetActive(false);
+            eventItems[1].SetActive(true);
         }
 
     }
