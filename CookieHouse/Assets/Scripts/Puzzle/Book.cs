@@ -15,6 +15,7 @@ public class Book : NetworkBehaviour
         changed.LoadNew();
         if (changed.Behaviour.doMatch)
         {
+            changed.Behaviour.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             changed.Behaviour.gameObject.transform.SetParent(changed.Behaviour.pivotPosition);
             Vector3 temp = changed.Behaviour.shiftValsue * changed.Behaviour.pivotPosition.childCount;
             changed.Behaviour.gameObject.transform.localPosition = Vector3.zero + temp;

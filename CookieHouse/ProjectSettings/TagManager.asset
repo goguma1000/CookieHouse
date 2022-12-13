@@ -6,6 +6,9 @@ TagManager:
   tags:
   - MainPanel
   - Canddy
+  - Hat
+  - House
+  - Bird
   layers:
   - Default
   - TransparentFX
