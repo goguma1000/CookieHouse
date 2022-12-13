@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class TransformSync : NetworkBehaviour
 {
     [Networked(OnChanged = nameof(OnGrab))] 
-    public HardwareHand currentGrabber { get; set; }
+    public int currentGrabber { get; set; }
 
     [Networked]
     private NetworkHand hand { get; set; }
@@ -20,9 +20,9 @@ public class TransformSync : NetworkBehaviour
     private static void OnGrab(Changed<TransformSync> changed)
     {
         changed.LoadNew();
-        if (changed.Behaviour.currentGrabber != null)
+        if (changed.Behaviour.currentGrabber != 0)
         {
-            changed.Behaviour.intercol.enabled = true;
+            changed.Behaviour.intercol.enabled = false;
             
         }
         else
@@ -44,8 +44,7 @@ public class TransformSync : NetworkBehaviour
         if (auth)
         {
             GameObject obj = args.interactorObject.transform.gameObject;
-            currentGrabber = obj.gameObject.GetComponent<HardwareHand>();
-            Debug.Log(currentGrabber);
+            currentGrabber = obj.gameObject.GetComponent<HardwareHand>().GetInstanceID();
             RigPart part = obj.GetComponent<HardwareHand>().side;
             if(part == RigPart.LeftController)
             {
@@ -60,26 +59,26 @@ public class TransformSync : NetworkBehaviour
 
     public void releaseGrabber(SelectExitEventArgs args)
     { 
-        currentGrabber = null;
+        currentGrabber = 0;
         hand = null;
     }
-    public override void FixedUpdateNetwork()
+    /*public override void FixedUpdateNetwork()
     {
         base.FixedUpdateNetwork();
-        if(currentGrabber!= null)
+        if(currentGrabber!= 0)
         {
             transform.position = hand.gameObject.transform.position;
             transform.rotation = hand.gameObject.transform.rotation;
         }
-    }
+    }*/
 
-    public override void Render()
+  /* public override void Render()
     {
         base.Render();
-        if (currentGrabber != null)
+        if (currentGrabber != 0)
         {
             transform.position = hand.gameObject.transform.position;
             transform.rotation = hand.gameObject.transform.rotation;
         }
-    }
+    }*/
 }
