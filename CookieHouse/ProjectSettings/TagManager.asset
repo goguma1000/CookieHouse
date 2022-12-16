@@ -10,6 +10,7 @@ TagManager:
   - House
   - Bird
   - Key
+  - PlayableArea
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Puzzle
   - Wall
   - PObject
-  - 
+  - rigCol
   - 
   - 
   - 

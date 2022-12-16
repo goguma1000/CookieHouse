@@ -55,7 +55,6 @@ public class Book : NetworkBehaviour
     }*/
     private async void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter");
         if (other.gameObject.CompareTag(colTag))
         {
             isTakingAuthority = true;
