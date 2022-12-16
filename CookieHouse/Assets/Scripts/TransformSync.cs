@@ -40,6 +40,7 @@ public class TransformSync : NetworkBehaviour
             changed.Behaviour.intercol.enabled = true;
             if (changed.Behaviour.useGravity)
             {
+                changed.Behaviour.rbcol.enabled = false;
                 changed.Behaviour.rb.isKinematic = false;
             }
         }

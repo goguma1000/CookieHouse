@@ -78,10 +78,17 @@ public class LobbyManager : NetworkBehaviour
         });
 
         string wait = null;
-        if (ready < nowPlayerCount)
-            wait = $"Waiting for {nowPlayerCount - ready} of {nowPlayerCount} players";
-        else if (!manager.IsSessionOwner)
-            wait = "Waiting for session owner to start";
+        if (nowPlayerCount != 2)
+        {
+            wait = $"Waiting for other players";
+        }
+        else
+        {
+            if (ready < nowPlayerCount)
+                wait = $"Waiting for {nowPlayerCount - ready} of {nowPlayerCount} players";
+            else if (!manager.IsSessionOwner)
+                wait = "Waiting for session owner to start";
+        }
         startButton.enabled = wait == null;
         startText.text = wait ?? "Start";
         if (wait == null) startText.fontSize = 20;

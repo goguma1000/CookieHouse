@@ -215,6 +215,11 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
         Debug.Log($"{player.PlayerId} disconnected");
         if (runner.Topology == SimulationConfig.Topologies.Shared && player != runner.LocalPlayer)
         {
+            if(SceneManager.GetActiveScene().buildIndex == (int)MapIndex.GameMap)
+            {
+                Disconnect();
+                return;
+            }
             NetworkObject playerObj = runner.GetPlayerObject(player);
             if (playerObj)
             {
