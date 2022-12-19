@@ -51,6 +51,8 @@ public class NetworkRig : NetworkBehaviour
             righthand.transform.rotation = input.rightHandRotation;
             headset.transform.position = input.headsetPosition;
             headset.transform.rotation = input.headsetRotation;
+            lefthand.gripValue = input.leftGripValue;
+            righthand.gripValue = input.rightGripValue;
         }
     }
 

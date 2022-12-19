@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 1015704005421334540}
   - component: {fileID: 8695799390049792968}
   - component: {fileID: 2616880689423366920}
-  - component: {fileID: 5994733422070376250}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -141,26 +140,8 @@ MonoBehaviour:
   _interpolationDataSource: 0
   networkTransform: {fileID: 0}
   side: 2
---- !u!95 &5994733422070376250
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859864739338762816}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e08fee6be55f254ea6c5d4132024ea2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  handAnim: {fileID: 5239775079758911520}
+  _gripValue: 0
 --- !u!1 &2239377797632356231
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +209,7 @@ Transform:
   - {fileID: 1015704005421334540}
   - {fileID: 3112774954566513445}
   - {fileID: 6878632854266412821}
+  - {fileID: 6503997200648848864}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -400,6 +382,8 @@ MonoBehaviour:
   _interpolationDataSource: 0
   networkTransform: {fileID: 0}
   side: 3
+  handAnim: {fileID: 3888853219791531548}
+  _gripValue: 0
 --- !u!1 &3602314540437743475
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +521,52 @@ Transform:
   m_Father: {fileID: 3361940015933105254}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6573422544202355133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6503997200648848864}
+  - component: {fileID: 7862059204793114152}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6503997200648848864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573422544202355133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3361940015933105254}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7862059204793114152
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573422544202355133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.19688858
+  m_Height: 0.8570365
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.18019158, z: -0.18733646}
 --- !u!1 &7813002601995319859
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +699,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00a306390c3db14a890d82bd11be3c9, type: 3}
+--- !u!1 &3872787862409443005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b00a306390c3db14a890d82bd11be3c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4143172961300827116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3888853219791531548
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872787862409443005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70485883eaad8ee4d82830e0b824bbf9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &4536594485931125767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b00a306390c3db14a890d82bd11be3c9,

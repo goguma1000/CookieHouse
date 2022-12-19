@@ -23,6 +23,8 @@ public struct RigInput : INetworkInput {
     public Quaternion rightHandRotation;
     public Vector3 headsetPosition;
     public Quaternion headsetRotation;
+    public float leftGripValue;
+    public float rightGripValue;
     
 }
 
@@ -57,6 +59,8 @@ public class HardwareRig : MonoBehaviour, INetworkRunnerCallbacks
         rigInput.rightHandRotation = rightHand.transform.rotation;
         rigInput.headsetPosition = headset.transform.position;
         rigInput.headsetRotation = headset.transform.rotation;
+        rigInput.leftGripValue = leftHand.getGripValue();
+        rigInput.rightGripValue = rightHand.getGripValue();
         input.Set(rigInput);
     }
 

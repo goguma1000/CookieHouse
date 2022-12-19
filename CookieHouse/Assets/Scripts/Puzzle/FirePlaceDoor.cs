@@ -8,7 +8,7 @@ public class FirePlaceDoor : NetworkBehaviour
     [Networked(OnChanged = nameof(LoadData))]
     private int handCount { get; set; }
     public Collider eventCollider;
-    public XRGrabInteractable grabinteractable;
+    public XrOffsetGrabInteractable grabinteractable;
     private void Update()
     {
        

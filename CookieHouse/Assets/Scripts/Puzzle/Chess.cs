@@ -7,6 +7,7 @@ public class Chess : NetworkBehaviour
     [Networked(OnChanged = nameof(EventOn))]
     private bool isEventOn { get; set; }
     public GameObject[] eventitems;
+    public GameObject otherChess;
     public Transform targetPosition;
     public float distOffset;
     private bool isTakingAuthority = false;
@@ -50,6 +51,7 @@ public class Chess : NetworkBehaviour
             changed.Behaviour.gameObject.transform.GetComponent<XrOffsetGrabInteractable>().enabled = false;
             changed.Behaviour.eventitems[0].SetActive(false);
             changed.Behaviour.eventitems[1].SetActive(true);
+            changed.Behaviour.otherChess.GetComponent<XrOffsetGrabInteractable>().enabled = false;
         }
     }
 }

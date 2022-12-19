@@ -12,6 +12,8 @@ TagManager:
   - Key
   - PlayableArea
   - Hand
+  - Happy
+  - Bad
   layers:
   - Default
   - TransparentFX
@@ -24,10 +26,10 @@ TagManager:
   - PObject
   - rigCol
   - OutLine
-  - 
-  - 
-  - 
-  - 
+  - Happy
+  - Bad
+  - Player
+  - Floor
   - 
   - 
   - 
