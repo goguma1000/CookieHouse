@@ -25,6 +25,8 @@ public class Piece : NetworkBehaviour
     }
     public async void CheckRightPosition()
     {
+        GetComponent<TransformSync>().useGravity = false;
+        GetComponent<Rigidbody>().isKinematic = true;
         float distance = Vector3.Distance(targetPosition.position, this.transform.position);
         if (distance < distOffset)
         {
@@ -36,10 +38,18 @@ public class Piece : NetworkBehaviour
                 transform.SetParent(null);
                 doMatch = true;
             }
+            return;
         }
-        else if (distOffset < distance && distance < 3 * distOffset)
+        else if (distOffset < distance && distance < 1.2 * distOffset)
         {
-            this.gameObject.transform.position += new Vector3(-0.2f, 0, 0);
+            GetComponent<TransformSync>().useGravity = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+            this.gameObject.transform.position += new Vector3(-0.1f, 0, 0);
+        }
+        else
+        {
+            GetComponent<TransformSync>().useGravity = true;
+            GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 }

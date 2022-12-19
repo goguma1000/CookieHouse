@@ -4,6 +4,7 @@ using UnityEngine;
 using Fusion;
 using UnityEngine.XR.Interaction.Toolkit;
 
+[OrderAfter(typeof(Piece))]
 public class TransformSync : NetworkBehaviour
 {
     [Networked(OnChanged = nameof(OnGrab))] 
@@ -11,11 +12,9 @@ public class TransformSync : NetworkBehaviour
 
     [Networked]
     private NetworkHand hand { get; set; }
-
     private Vector3 defaultPosition;
     private Quaternion defaultRotation;
     public Collider intercol;
-    public Collider rbcol;
     public Rigidbody rb;
     public bool useGravity;
     private bool isTakingAuthority = false;
@@ -31,8 +30,10 @@ public class TransformSync : NetworkBehaviour
         if (changed.Behaviour.currentGrabber != 0)
         {
             changed.Behaviour.intercol.enabled = false;
-            if(changed.Behaviour.useGravity)
-                changed.Behaviour.rbcol.enabled = true;
+            if (changed.Behaviour.useGravity)
+            {
+                changed.Behaviour.rb.useGravity = false;
+            }
             
         }
         else
@@ -40,7 +41,7 @@ public class TransformSync : NetworkBehaviour
             changed.Behaviour.intercol.enabled = true;
             if (changed.Behaviour.useGravity)
             {
-                changed.Behaviour.rbcol.enabled = false;
+                changed.Behaviour.rb.useGravity = true;
                 changed.Behaviour.rb.isKinematic = false;
             }
         }
@@ -68,12 +69,29 @@ public class TransformSync : NetworkBehaviour
         }
     }
 
-    public void releaseGrabber(SelectExitEventArgs args)
-    { 
-        currentGrabber = 0;
+    public async void releaseGrabber(SelectExitEventArgs args)
+    {
+        isTakingAuthority = true;
+        bool auth = await Object.WaitForStateAuthority();
+        isTakingAuthority = false;
         hand = null;
+        currentGrabber = 0;
+        
     }
-    public override void FixedUpdateNetwork()
+    
+    public async void getStateAuth()
+    {
+        isTakingAuthority = true;
+        bool auth = await Object.WaitForStateAuthority();
+        isTakingAuthority = false;
+    }
+
+    public void ResetPosion()
+    {
+        this.gameObject.transform.position = defaultPosition;
+        this.gameObject.transform.rotation = defaultRotation;
+    }
+    /*public override void FixedUpdateNetwork()
     {
         base.FixedUpdateNetwork();
         if(currentGrabber!= 0 && useGravity)
@@ -81,9 +99,9 @@ public class TransformSync : NetworkBehaviour
             transform.position = hand.gameObject.transform.position;
             transform.rotation = hand.gameObject.transform.rotation;
         }
-    }
+    }*/
 
-    public override void Render()
+    /*public override void Render()
     {
         base.Render();
         if (currentGrabber != 0 && useGravity)
@@ -91,9 +109,9 @@ public class TransformSync : NetworkBehaviour
             transform.position = hand.gameObject.transform.position;
             transform.rotation = hand.gameObject.transform.rotation;
         }
-    }
+    }*/
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PlayableArea") && intercol.enabled)
         {
@@ -101,4 +119,5 @@ public class TransformSync : NetworkBehaviour
             this.gameObject.transform.rotation = defaultRotation;
         }
     }
+   
 }

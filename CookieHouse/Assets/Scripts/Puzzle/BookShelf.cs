@@ -21,6 +21,7 @@ public class BookShelf : MonoBehaviour
             isEventOn = false;
             eventItems[0].SetActive(false);
             eventItems[1].SetActive(true);
+            this.gameObject.GetComponent<BookShelf>().enabled = false;
         }
 
     }

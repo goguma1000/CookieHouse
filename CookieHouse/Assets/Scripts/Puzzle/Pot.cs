@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
-public class Pot : MonoBehaviour
+public class Pot : NetworkBehaviour
 {
-    private int answer = 0;
+    [Networked(OnChanged = nameof(UpdateValue))]
+    private int answer { get; set; }
     private bool eventOn =false;
     [SerializeField] GameObject eventItem;
-    
+    private bool isTakingAuthority = false;
     // Update is called once per frame
     void Update()
     {
@@ -21,11 +23,17 @@ public class Pot : MonoBehaviour
             eventItem.transform.Rotate(Vector3.up, 30*Time.deltaTime);
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private static void UpdateValue(Changed<Pot> changed)
+    {
+        changed.LoadNew();
+    }
+    private async void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Key"))
         {
+            isTakingAuthority = true;
+            bool auth = await Object.WaitForStateAuthority();
+            isTakingAuthority = false;
             answer++;
             Destroy(collision.gameObject);
         }

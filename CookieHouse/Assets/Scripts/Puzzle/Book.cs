@@ -61,6 +61,7 @@ public class Book : NetworkBehaviour
             bool auth = await Object.WaitForStateAuthority();
             isTakingAuthority = false;
             doMatch = true;
+            GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }

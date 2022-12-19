@@ -28,10 +28,14 @@ public class PuzzleBoard : NetworkBehaviour
             }
             else if (isCandy || isSkeleton)
             {
-                eventItems[0].SetActive(true);
-                eventItems[1].SetActive(true);
+                if(!eventItems[0].activeSelf) eventItems[0].SetActive(true);
             }
         }
-        
+        this.enabled = false;
+    }
+   
+    public void GetStateAuth(GameObject obj)
+    {
+        obj.GetComponent<TransformSync>().getStateAuth();
     }
 }
