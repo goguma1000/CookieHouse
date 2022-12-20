@@ -18,7 +18,6 @@ public class BadEnding : NetworkBehaviour
         changed.LoadNew();
         if(changed.Behaviour.playerCount == 2)
         {
-            changed.Behaviour.rawImage.SetActive(true);
             changed.Behaviour.videoPlayer.Play();
             changed.Behaviour.leftDoor.transform.localRotation = Quaternion.identity;
             changed.Behaviour.rightDoor.transform.localRotation = Quaternion.identity;

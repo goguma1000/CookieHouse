@@ -20,13 +20,13 @@ public class ShadowMatch : NetworkBehaviour
             Debug.Log($"match x: {matchTarget.transform.right}, obj x: {transform.right}, Dot: {Vector3.Dot(matchTarget.transform.right, transform.right)}");
             if (Light.activeSelf)
             { 
-                if (transform.up != Vector3.up && transform.right != Vector3.right && Vector3.Dot(matchTarget.transform.up, transform.up) > 0.89 && Vector3.Dot(matchTarget.transform.right, transform.right) > 0.95)
-                {
+                if (transform.up != Vector3.up && transform.right != Vector3.right && Vector3.Dot(matchTarget.transform.up, transform.up) > 0.95 && Vector3.Dot(matchTarget.transform.right, transform.right) > 0.95)
+                {   
+                    audio.Play();
                     GetComponent<XrOffsetGrabInteractable>().enabled = false;
                     matchTarget.SetActive(false);
                     visual.SetActive(false);
                     isMatch = true;
-                    audio.Play();
                 }
             }
            

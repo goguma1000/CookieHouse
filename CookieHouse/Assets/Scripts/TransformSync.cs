@@ -21,8 +21,8 @@ public class TransformSync : NetworkBehaviour
     public Rigidbody rb;
     public bool useGravity;
     private bool isTakingAuthority = false;
-    private bool isSetGrabber = false;
-    private bool isReleaseGrabber = false;
+    //private bool isSetGrabber = false;
+    //private bool isReleaseGrabber = false;
 
     private void Awake()
     {
@@ -54,9 +54,7 @@ public class TransformSync : NetworkBehaviour
 
     public async void setGrabber(SelectEnterEventArgs args)
     {
-        while (isReleaseGrabber) { }
         isTakingAuthority = true;
-        isSetGrabber = true;
         bool auth = await Object.WaitForStateAuthority();
         isTakingAuthority = false;
         if (auth)
@@ -73,19 +71,15 @@ public class TransformSync : NetworkBehaviour
                 hand = obj.transform.parent.GetComponent<HardwareRig>().transformBridge.righthand;
             }
         }
-        isSetGrabber = false;
     }
 
     public async void releaseGrabber(SelectExitEventArgs args)
     {
-        while (isSetGrabber) { }
-        isReleaseGrabber = true;
         isTakingAuthority = true;
         bool auth = await Object.WaitForStateAuthority();
         isTakingAuthority = false;
         hand = null;
         currentGrabber = 0;
-        isReleaseGrabber = false;
         
     }
     
