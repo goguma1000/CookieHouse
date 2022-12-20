@@ -7,6 +7,7 @@ public class ShadowMatch : NetworkBehaviour
 {
     public GameObject matchTarget;
     public GameObject visual;
+    public AudioSource audio;
     [SerializeField] private GameObject eventItem;
     [SerializeField] private GameObject Light;
     private bool isMatch = false;
@@ -25,6 +26,7 @@ public class ShadowMatch : NetworkBehaviour
                     matchTarget.SetActive(false);
                     visual.SetActive(false);
                     isMatch = true;
+                    audio.Play();
                 }
             }
            
@@ -35,6 +37,7 @@ public class ShadowMatch : NetworkBehaviour
             if (eventItem.transform.localRotation.eulerAngles.y >= 30)
             {
                 isMatch = false;
+                eventItem.GetComponent<Door>().isOpen = true;
                 this.gameObject.SetActive(false);
                 return;
             }

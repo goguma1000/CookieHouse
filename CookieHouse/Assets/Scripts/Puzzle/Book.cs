@@ -15,7 +15,7 @@ public class Book : NetworkBehaviour
     [SerializeField] private string colTag;
     [SerializeField] private Collider interCol;
     private bool isTakingAuthority = false;
-
+    public AudioSource audio;
     private static void setMatch(Changed<Book> changed)
     {
         changed.LoadNew();
@@ -62,6 +62,7 @@ public class Book : NetworkBehaviour
             isTakingAuthority = false;
             doMatch = true;
             GetComponent<Rigidbody>().isKinematic = true;
+            audio.Play();
         }
     }
 }

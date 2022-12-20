@@ -8,6 +8,7 @@ public class EndingLocker : NetworkBehaviour
     [SerializeField] GameObject socket;
     public GameObject leftDoor;
     public GameObject rightDoor;
+    public AudioSource audio;
     [Networked(OnChanged = nameof(EventOn))]
     private NetworkBool isEventOn { get; set; }
 
@@ -35,6 +36,7 @@ public class EndingLocker : NetworkBehaviour
             other.gameObject.transform.localRotation = Quaternion.identity;
             bool auth = await Object.WaitForStateAuthority();
             isEventOn = true;
+            audio.Play();
         }
     }
 

@@ -9,14 +9,41 @@ public class Chess : NetworkBehaviour
     public GameObject[] eventitems;
     public GameObject otherChess;
     public Transform targetPosition;
+    public GameObject hintObject;
     public float distOffset;
     private bool isTakingAuthority = false;
     private Vector3 defaultPosition;
     private Quaternion defaultRotation;
+    private bool timerON = false;
+    private float timer = 0;
     private void Awake()
     {
         defaultPosition = this.gameObject.transform.position;
         defaultRotation = this.gameObject.transform.rotation;
+    }
+    private void Update()
+    {
+        if (timerON)
+        {
+            timer += Time.deltaTime;
+        }
+        else if (!timerON && timer != 0) timer = 0;
+        
+        if(timer > 60f && !hintObject.activeSelf)
+        {
+            hintObject.SetActive(true);
+        }
+    }
+    public void TimerOn()
+    {
+        timerON = true;
+    }
+
+    public void TimerOff()
+    {
+        timerON = false;
+        hintObject.SetActive(false);
+        timer = 0;
     }
     public async void CheckRightPosition()
     {
@@ -52,6 +79,7 @@ public class Chess : NetworkBehaviour
             changed.Behaviour.eventitems[0].SetActive(false);
             changed.Behaviour.eventitems[1].SetActive(true);
             changed.Behaviour.otherChess.GetComponent<XrOffsetGrabInteractable>().enabled = false;
+            changed.Behaviour.enabled = false;
         }
     }
 }

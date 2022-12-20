@@ -10,6 +10,7 @@ public class Piece : NetworkBehaviour
 
     [SerializeField] private Transform targetPosition;
     [SerializeField] private float distOffset;
+    public AudioSource audio;
     private bool isTakingAuthority = false;
     private static void setMatch(Changed<Piece> changed)
     {
@@ -37,6 +38,8 @@ public class Piece : NetworkBehaviour
             {
                 transform.SetParent(null);
                 doMatch = true;
+                audio.Play();
+
             }
             return;
         }

@@ -14,8 +14,8 @@ public class NetworkButton : NetworkBehaviour
     public int Owner { get; set; }
 
     public TextMeshProUGUI text;
+    public GameObject SelectImg;
     private bool isTakingAuthority = false;
-
     public void setString(string name)
     {
         text.text = playerName;
@@ -25,7 +25,15 @@ public class NetworkButton : NetworkBehaviour
     {
         changed.LoadNew();
         changed.Behaviour.setString(changed.Behaviour.playerName);
-        Debug.Log("update");
+        if (changed.Behaviour.Owner != 0)
+        {
+            changed.Behaviour.SelectImg.SetActive(true);
+        }
+        else
+        {
+            changed.Behaviour.SelectImg.SetActive(false);
+        }
+        Debug.Log("update" + changed.Behaviour.GetInstanceID());
     }
 
     public async void OnClickButton(int btnNum)
@@ -69,5 +77,16 @@ public class NetworkButton : NetworkBehaviour
             }
             Debug.Log($"Owner:{Owner}  playerName:{playerName}");
         }
+    }
+
+    public async void ForceReset(Player ply)
+    {
+        isTakingAuthority = true;
+        bool auth = await Object.WaitForStateAuthority();
+        isTakingAuthority = false;
+        playerName = "";
+        Owner = 0;
+        ply.RPC_SetCharacterSelected(0);
+        ply.RPC_SetIsReady(false);
     }
 }

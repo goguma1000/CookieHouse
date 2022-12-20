@@ -34,6 +34,12 @@ public class Player : NetworkBehaviour
         }
     }
 
+    public void ForceReset(Player ply)
+    {
+        ply.RPC_SetCharacterSelected(0);
+        ply.RPC_SetIsReady(false);
+    }
+
     public void Despawn()
     {
         if (HasStateAuthority)

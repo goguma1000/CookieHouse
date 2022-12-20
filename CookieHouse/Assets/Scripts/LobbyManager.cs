@@ -7,14 +7,17 @@ using Fusion;
 using Fusion.Sockets;
 using System;
 using System.Linq;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class LobbyManager : NetworkBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI[] PlayerListItems;
     [SerializeField] private NetworkButton[] networkButtons;
+    [SerializeField] private GameObject[] selectImages;
     [SerializeField] private Transform itemParent;
     [SerializeField] private Button startButton;
+    [SerializeField] private XRSimpleInteractable vrStartButton;
     [SerializeField] private TextMeshProUGUI startText;
     private int prePlayerCount = 0;
     private Player player;
@@ -75,6 +78,10 @@ public class LobbyManager : NetworkBehaviour
         manager.ForEachPlayer(nowPlayerCount, ply =>
         {
             if (ply.Ready) ready++;
+            if (ply.selectedCharacterNum != 0 && networkButtons[ply.selectedCharacterNum - 1].Owner == 0)
+            {
+                ply.ForceReset(ply);
+            }
         });
 
         string wait = null;
@@ -89,7 +96,24 @@ public class LobbyManager : NetworkBehaviour
             else if (!manager.IsSessionOwner)
                 wait = "Waiting for session owner to start";
         }
+        if(ready == 2)
+        {
+            int sum = 0;
+            manager.ForEachPlayer(nowPlayerCount, ply =>
+            {
+                sum += ply.selectedCharacterNum;
+            });
+            if(sum % 2 == 0)
+            {
+                manager.ForEachPlayer(nowPlayerCount, ply =>
+                {
+                    networkButtons[ply.selectedCharacterNum - 1].ForceReset(ply);
+                });
+                return;
+            }
+        }
         startButton.enabled = wait == null;
+        vrStartButton.enabled = wait == null;
         startText.text = wait ?? "Start";
         if (wait == null) startText.fontSize = 20;
         else startText.fontSize = 10;
@@ -98,6 +122,10 @@ public class LobbyManager : NetworkBehaviour
     {
         for(int i =0; i < nowPlayerCount; i++)
         {
+            if (ply.selectedCharacterNum != 0)
+            {
+                selectImages[ply.selectedCharacterNum - 1].SetActive(true);
+            }
             if (PlayerListItems[i].text != "") continue;
             else
             {

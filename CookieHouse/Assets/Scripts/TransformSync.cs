@@ -12,12 +12,17 @@ public class TransformSync : NetworkBehaviour
 
     [Networked]
     private NetworkHand hand { get; set; }
+    [Networked(OnChanged = nameof(EnabledGrabInteractor))]
+    private NetworkBool isEnableGrabinter { get; set; }
+
     private Vector3 defaultPosition;
     private Quaternion defaultRotation;
     public Collider intercol;
     public Rigidbody rb;
     public bool useGravity;
     private bool isTakingAuthority = false;
+    private bool isSetGrabber = false;
+    private bool isReleaseGrabber = false;
 
     private void Awake()
     {
@@ -49,8 +54,9 @@ public class TransformSync : NetworkBehaviour
 
     public async void setGrabber(SelectEnterEventArgs args)
     {
-
+        while (isReleaseGrabber) { }
         isTakingAuthority = true;
+        isSetGrabber = true;
         bool auth = await Object.WaitForStateAuthority();
         isTakingAuthority = false;
         if (auth)
@@ -67,15 +73,19 @@ public class TransformSync : NetworkBehaviour
                 hand = obj.transform.parent.GetComponent<HardwareRig>().transformBridge.righthand;
             }
         }
+        isSetGrabber = false;
     }
 
     public async void releaseGrabber(SelectExitEventArgs args)
     {
+        while (isSetGrabber) { }
+        isReleaseGrabber = true;
         isTakingAuthority = true;
         bool auth = await Object.WaitForStateAuthority();
         isTakingAuthority = false;
         hand = null;
         currentGrabber = 0;
+        isReleaseGrabber = false;
         
     }
     
@@ -84,6 +94,18 @@ public class TransformSync : NetworkBehaviour
         isTakingAuthority = true;
         bool auth = await Object.WaitForStateAuthority();
         isTakingAuthority = false;
+    }
+
+    private static void EnabledGrabInteractor(Changed<TransformSync> changed)
+    {
+        changed.LoadNew();
+        if (changed.Behaviour.isEnableGrabinter)
+            changed.Behaviour.gameObject.GetComponent<XrOffsetGrabInteractable>().enabled = true;
+    }
+    public  void enableGrabInteractor()
+    {
+        getStateAuth();
+        isEnableGrabinter = true;
     }
 
     public void ResetPosion()

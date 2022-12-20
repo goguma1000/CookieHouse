@@ -16,21 +16,15 @@ public class BadEnding : NetworkBehaviour
     private static void PlayVideo(Changed<BadEnding> changed)
     {
         changed.LoadNew();
-        if(changed.Behaviour.playerCount == 1)
+        if(changed.Behaviour.playerCount == 2)
         {
+            changed.Behaviour.rawImage.SetActive(true);
             changed.Behaviour.videoPlayer.Play();
             changed.Behaviour.leftDoor.transform.localRotation = Quaternion.identity;
             changed.Behaviour.rightDoor.transform.localRotation = Quaternion.identity;
         }
     }
 
-    private void Update()
-    {
-        if (!videoPlayer.isPlaying && rawImage.activeSelf)
-        {
-            rawImage.SetActive(false);
-        }
-    }
 
     private async void OnTriggerEnter(Collider other)
     {

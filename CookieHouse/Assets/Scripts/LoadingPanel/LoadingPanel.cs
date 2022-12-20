@@ -38,6 +38,11 @@ public class LoadingPanel : NetworkSceneManagerBase
 
             loadingPanel.SetActive(false);
         }
+        else if(SceneManager.GetActiveScene().buildIndex == (int)MapIndex.GameMap)
+        {
+            NetworkManager.FindInstance().audioSource.Stop();
+
+        }
 
     }
 

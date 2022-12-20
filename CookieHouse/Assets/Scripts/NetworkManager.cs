@@ -34,7 +34,11 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     
     [SerializeField] private Session sessionPrefab;
     [SerializeField] private Player playerPrefab;
+    public AudioSource audioSource;
     public GameObject loadingPanel;
+
+    public AudioClip MenuSound;
+    public AudioClip GameMapSound;
 
     private GameObject mainPanel;
     private NetworkRunner _runner;
@@ -187,7 +191,14 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
 
     private void Update()
     {
-
+        if(SceneManager.GetActiveScene().buildIndex == (int)MapIndex.GameMap && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        else
+        {
+            if (!audioSource.isPlaying) audioSource.Play();
+        }
     }
 
     #region Fusion interface use
