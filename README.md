@@ -110,6 +110,7 @@
    객체에 대한 State Autority를 가진 유저가 값을 변경했을 때만 OnChanged Callback이 호출되므로  
    해당 변수의 값을 바꾸기 전에 객체의 State AUthority를 얻어야 한다.  
 </br>
+
 ---  
 
 ### 퍼즐 워크플로우
