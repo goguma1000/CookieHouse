@@ -1,7 +1,7 @@
 # Cookie House
 2인 멀티플레이 VR 방탈출 게임으로 네트워크 엔진으로 Photon Fusion을 사용하였으며, VR기능은 XR Interaction toolkit을 사용함.
 
-코드 경로: CookieHouse/Assets/Scripts
+코드 경로: [Scripts](https://github.com/goguma1000/CookieHouse/tree/main/CookieHouse/Assets/Scripts)
 ## 목차
 **[네트워크](#네트워크)**  
    &nbsp; **- [매치 메이킹](#매치-메이킹)**    
@@ -74,7 +74,7 @@
     ![그림6](https://github.com/goguma1000/CookieHouse/assets/102130574/46a5d447-b2b8-4fdf-84af-ac5e40fbfc3a)  
     유저가 캐릭터를 선택하면 해당 버튼에 유저 정보를 저장하고, 선택한 유저의 이름을 띄운다.  
     다시 한번 동일한 캐릭터를 선택하면 캐릭터 선택이 해제된다.  
-    ![그림7](https://github.com/goguma1000/CookieHouse/assets/102130574/cdfcd7f1-bc48-4311-b197-b5e1b0b22733) 
+    ![그림7](https://github.com/goguma1000/CookieHouse/assets/102130574/cdfcd7f1-bc48-4311-b197-b5e1b0b22733)   
     캐릭터 버튼은 두 유저가 공유하고 있으므로 Photon에서 제공하는 Networked 프로퍼티로 변수를 선언하여 버튼의 선택정보를 동기화한다.  
     Player 객체는 두 유저가 공유하고 있지 않으므로 유저의 선택정보를 RPC로 동기화한다.  
 
@@ -85,7 +85,7 @@
     
 - **게임 시작**  
     **Flow Chart**  
-    ![그림8](https://github.com/goguma1000/CookieHouse/assets/102130574/cb264dc9-c130-4e4e-beb8-7c7c3f3ae8ce) 
+    ![그림8](https://github.com/goguma1000/CookieHouse/assets/102130574/cb264dc9-c130-4e4e-beb8-7c7c3f3ae8ce)    
     Update 함수에서 두 유저가 모두 캐릭터를 선택했는지, 방에 참여한 유저가 2명인지 확인한다.  
     두 유저가 모두 캐릭터를 선택하면 두 유저가 같은 캐릭터를 선택했는지 확인하고,  
     같은 캐릭터를 선택했다면 두 유저의 선택 정보를 초기화한다.  
@@ -108,17 +108,17 @@
    Photon에서 제공하는 프로퍼티로, 해당 프로퍼티로 선언한 변수의 값이 변경되면  
    OnChanged에 등록된 함수를 호출하여 동기화 할 수 있다.  
    객체에 대한 State Autority를 가진 유저가 값을 변경했을 때만 OnChanged Callback이 호출되므로  
-   해당 변수의 값을 바꾸기 전에 객체의 State AUthority를 얻어야 한다.    
-
-
+   해당 변수의 값을 바꾸기 전에 객체의 State AUthority를 얻어야 한다.  
+</br>
 ---  
 ### 퍼즐 워크플로우
 본 게임에는 **그림, 뼈 완성 퍼즐**, **그림자 퍼즐**, **책장 정리 퍼즐**, **아궁이 퍼즐** 그리고 **체스 퍼즐**이 있다.  
 #### **그림, 뼈 완성 퍼즐**  
-  ![그림9](https://github.com/goguma1000/CookieHouse/assets/102130574/71928a59-88d5-4227-89b4-07cdca96f88c)![그림10](https://github.com/goguma1000/CookieHouse/assets/102130574/f93c8f0a-d2e7-4215-9304-2f2fea63a90b)  
+  ![그림9](https://github.com/goguma1000/CookieHouse/assets/102130574/71928a59-88d5-4227-89b4-07cdca96f88c) | ![그림10](https://github.com/goguma1000/CookieHouse/assets/102130574/f93c8f0a-d2e7-4215-9304-2f2fea63a90b)  
+  ---|---|   
 
-  - **Flow Chart**  
-  ![그림11](https://github.com/goguma1000/CookieHouse/assets/102130574/55c36472-4eef-466b-8818-e5d2f8d16ab9)
+  - **Flow Chart**   
+  ![그림11](https://github.com/goguma1000/CookieHouse/assets/102130574/55c36472-4eef-466b-8818-e5d2f8d16ab9)  
   퍼즐 조각과 퍼즐이 놓일 위치 사이의 거리가 일정 거리만큼 가까워지면 퍼즐 조각이 맞춰진다.  
   모든 퍼즐조각이 맞춰지면 다음 퍼즐이 활성화된다.  
 
@@ -153,7 +153,7 @@
 #### **아궁이 퍼즐**  
 ![그림16](https://github.com/goguma1000/CookieHouse/assets/102130574/55bf4b36-65c4-461d-b6d2-5c3dd2521f9a) 
 - **Flow Chart**  
-  ![그림17](https://github.com/goguma1000/CookieHouse/assets/102130574/fa93f1e6-1819-4aeb-8e9d-d934c2206a68) 
+  ![그림17](https://github.com/goguma1000/CookieHouse/assets/102130574/fa93f1e6-1819-4aeb-8e9d-d934c2206a68)  
   유저가 아궁이의 손잡이를 잡으면 Simple interactable 컴포넌트에 의해 Grab intreactable 컴포넌트가 활성화되고  
   나머지 한 손으로 손잡이를 잡으면 아궁이 문을 열 수 있다.  
   만약 두 손 중 한 손이라도 놓으면 아궁이 문이 다시 닫힌다.  
