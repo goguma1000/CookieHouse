@@ -3,8 +3,8 @@
 
 코드 경로: [Scripts](https://github.com/goguma1000/CookieHouse/tree/main/CookieHouse/Assets/Scripts)
 
-**트레일러:** [Link](https://youtu.be/qXvOeSiNOpk)  
-**플레이 영상** [Link](https://youtu.be/CEsWqRJp4Zk)  
+**트레일러:** [Link](https://youtu.be/qXvOeSiNOpk) (0:46) 
+**플레이 영상:** [Link](https://youtu.be/CEsWqRJp4Zk) (06:14) 
 ## 목차
 **[네트워크](#네트워크)**  
    &nbsp; **- [매치 메이킹](#매치-메이킹)**    
