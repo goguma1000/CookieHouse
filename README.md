@@ -112,13 +112,14 @@
    OnChanged에 등록된 함수를 호출하여 동기화 할 수 있다.  
    객체에 대한 State Autority를 가진 유저가 값을 변경했을 때만 OnChanged Callback이 호출되므로  
    해당 변수의 값을 바꾸기 전에 객체의 State AUthority를 얻어야 한다.  
-</br>
 
 ---  
 
 ### 퍼즐 워크플로우
 본 게임에는 **그림, 뼈 완성 퍼즐**, **그림자 퍼즐**, **책장 정리 퍼즐**, **아궁이 퍼즐** 그리고 **체스 퍼즐**이 있다.  
+
 #### **그림, 뼈 완성 퍼즐**  
+
   ![그림9](https://github.com/goguma1000/CookieHouse/assets/102130574/71928a59-88d5-4227-89b4-07cdca96f88c) | ![그림10](https://github.com/goguma1000/CookieHouse/assets/102130574/f93c8f0a-d2e7-4215-9304-2f2fea63a90b)  
   ---|---|   
 
